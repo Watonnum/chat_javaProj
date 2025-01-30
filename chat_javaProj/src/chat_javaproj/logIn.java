@@ -4,8 +4,8 @@ import java.awt.Color;
 import java.awt.Desktop;
 import java.net.URI;
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.border.Border;
-import org.w3c.dom.css.RGBColor;
 
 
 public class logIn extends javax.swing.JFrame {
@@ -161,6 +161,8 @@ public class logIn extends javax.swing.JFrame {
     // ***--------Bordor Color---------****
     Border borderW= BorderFactory.createLineBorder(Color.WHITE, 5);
     Border borderR= BorderFactory.createLineBorder(Color.RED, 2);
+    Border borderTouch= BorderFactory.createLineBorder(Color.BLACK, 2);
+    
     // ***--------Variable-------------***
     String Input = "",InputPW = "";
     int i = 0;
@@ -173,6 +175,14 @@ public class logIn extends javax.swing.JFrame {
             app.setVisible(true);
             app.setLocationRelativeTo(this);
             
+        } else {
+           JOptionPane.showConfirmDialog(null, "not found 404", "Warning", JOptionPane.CLOSED_OPTION, JOptionPane.WARNING_MESSAGE);
+           
+           if(Input.length() == 7) {
+               txtPassword.requestFocus();
+           } else {
+               txtUsername.requestFocus();
+           }
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 
@@ -190,20 +200,16 @@ public class logIn extends javax.swing.JFrame {
 
     private void txtUsernameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsernameKeyReleased
         Input = txtUsername.getText();
-        
         validationInput(Input);
-        System.out.println(Input.length());
     }//GEN-LAST:event_txtUsernameKeyReleased
 
     private void txtPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyReleased
         InputPW = txtPassword.getText();
-        
         validationInputPW(InputPW);
     }//GEN-LAST:event_txtPasswordKeyReleased
 
     private void txtUsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUsernameFocusGained
         Input = txtUsername.getText();
-        Border borderTouch= BorderFactory.createLineBorder(Color.BLACK, 2);
         boolean on_off = Input.isEmpty();
         
         if (on_off) {
@@ -213,7 +219,6 @@ public class logIn extends javax.swing.JFrame {
 
     private void txtPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPasswordFocusGained
         Input = txtPassword.getText();
-        Border borderTouch= BorderFactory.createLineBorder(Color.BLACK, 2);
         boolean on_off = Input.isEmpty();
         
         if (on_off) {
@@ -231,8 +236,9 @@ public class logIn extends javax.swing.JFrame {
 
     private void lbHelpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbHelpMouseClicked
         try {
-                    Desktop.getDesktop().browse(new URI("https://www.rsu.ac.th/")); // เปลี่ยน URL ได้
-                } catch (Exception ex) {
+                    Desktop.getDesktop().browse(new URI("https://www.rsu.ac.th/"));
+                } 
+        catch (Exception ex) {
                     ex.printStackTrace();
                 }
     }//GEN-LAST:event_lbHelpMouseClicked
