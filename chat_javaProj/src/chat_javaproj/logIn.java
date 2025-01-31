@@ -9,7 +9,7 @@ import javax.swing.border.Border;
 
 
 public class logIn extends javax.swing.JFrame {
-    
+    // call another app
     rsuApp app = new rsuApp();
     
     public logIn() {
@@ -165,7 +165,8 @@ public class logIn extends javax.swing.JFrame {
     
     // ***--------Variable-------------***
     String Input = "",InputPW = "";
-    int i = 0;
+    
+    int i = 0; //for test log
     
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         Input = txtUsername.getText();
