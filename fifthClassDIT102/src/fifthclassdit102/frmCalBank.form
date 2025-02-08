@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="lb025" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="txt025" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lb10" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lb5" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="txt5" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="txt10" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lbRemain" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lb500" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lb100" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbMoney" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lb1000" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lb20" min="-2" max="-2" attributes="0"/>
+                          <Component id="lb101" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txt50" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="txt1000" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtMoney" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="txt100" min="-2" max="-2" attributes="0"/>
+                          <Component id="txt500" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="txtRemain" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnCal" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="txt20" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="lb1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="txt1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lb050" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="txt050" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="30" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbMoney" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtMoney" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lb1000" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt1000" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lb500" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt500" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lb100" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt100" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="12" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lb101" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt50" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="txt20" min="-2" max="-2" attributes="0"/>
+                  <Component id="lb20" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txt10" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lb10" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txt5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lb5" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txt1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lb1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lb050" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt050" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lb025" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt025" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbRemain" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtRemain" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCal" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lbMoney">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Money"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtMoney">
+      <Properties>
+        <Property name="columns" type="int" value="8"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMoneyActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnCal">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Calculate"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCalActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb1000">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="1000"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt1000">
+      <Properties>
+        <Property name="columns" type="int" value="8"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt1000ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb500">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="500"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt500">
+      <Properties>
+        <Property name="columns" type="int" value="8"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbRemain">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Remain"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtRemain">
+      <Properties>
+        <Property name="columns" type="int" value="8"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb100">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="100"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt100">
+      <Properties>
+        <Property name="columns" type="int" value="8"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb20">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="20"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt20">
+      <Properties>
+        <Property name="columns" type="int" value="8"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb10">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="10"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt10">
+      <Properties>
+        <Property name="columns" type="int" value="8"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="5"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt5">
+      <Properties>
+        <Property name="columns" type="int" value="8"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt1">
+      <Properties>
+        <Property name="columns" type="int" value="8"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb050">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="50 satang"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt050">
+      <Properties>
+        <Property name="columns" type="int" value="8"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt025">
+      <Properties>
+        <Property name="columns" type="int" value="8"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb025">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="25 satang"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb101">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="50"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt50">
+      <Properties>
+        <Property name="columns" type="int" value="8"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
