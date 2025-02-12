@@ -11,7 +11,7 @@ public class rsuApp extends javax.swing.JFrame {
         initComponents();
         
     }
-    Client cli = new Client();
+
     String userMSG;
 
     @SuppressWarnings("unchecked")

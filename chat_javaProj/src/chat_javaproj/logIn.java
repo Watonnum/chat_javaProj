@@ -22,13 +22,13 @@ public class logIn extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtUsername = new javax.swing.JTextField();
+        txtUsername = new CustomTextField(20);
         btnLogin = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         lbTitle = new javax.swing.JLabel();
         lbUsername = new javax.swing.JLabel();
         lbPassword = new javax.swing.JLabel();
-        txtPassword = new javax.swing.JPasswordField();
+        txtPassword = new CustomPasswordField(20);
         lbHelp = new javax.swing.JLabel();
         iconUsername = new javax.swing.JLabel();
         iconUsername1 = new javax.swing.JLabel();
@@ -89,6 +89,7 @@ public class logIn extends javax.swing.JFrame {
 
         txtPassword.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         txtPassword.setBorder(null);
+        txtPassword.setPreferredSize(new java.awt.Dimension(64, 28));
         txtPassword.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtPasswordFocusGained(evt);
@@ -105,7 +106,7 @@ public class logIn extends javax.swing.JFrame {
 
         lbHelp.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         lbHelp.setForeground(new java.awt.Color(51, 51, 255));
-        lbHelp.setText("need help?");
+        lbHelp.setText("Need help?");
         lbHelp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lbHelp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -119,6 +120,7 @@ public class logIn extends javax.swing.JFrame {
             }
         });
 
+        iconUsername.setBackground(new java.awt.Color(255, 255, 255));
         iconUsername.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         iconUsername.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_javaproj/icon/user.png"))); // NOI18N
         iconUsername.setLabelFor(txtUsername);
@@ -137,16 +139,15 @@ public class logIn extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(iconUsername1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbPassword)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(iconUsername)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbUsername)
-                            .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbPassword)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,17 +167,17 @@ public class logIn extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(lbTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(lbUsername)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(iconUsername))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbPassword)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(iconUsername1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbHelp)
@@ -197,8 +198,6 @@ public class logIn extends javax.swing.JFrame {
     // ***--------Variable-------------***
     String Input = "",InputPW = "";
     
-    int i = 0; //for test log
-    
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         Input = txtUsername.getText();
         InputPW = txtPassword.getText();
@@ -217,7 +216,6 @@ public class logIn extends javax.swing.JFrame {
            }
         }
         
-        Server sv = new Server();
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
@@ -234,12 +232,12 @@ public class logIn extends javax.swing.JFrame {
 
     private void txtUsernameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsernameKeyReleased
         Input = txtUsername.getText();
-        validationInput(Input);
+//        validationInput(Input);
     }//GEN-LAST:event_txtUsernameKeyReleased
 
     private void txtPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyReleased
         InputPW = txtPassword.getText();
-        validationInputPW(InputPW);
+//        validationInputPW(InputPW);
     }//GEN-LAST:event_txtPasswordKeyReleased
 
     private void txtUsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUsernameFocusGained
@@ -261,11 +259,11 @@ public class logIn extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPasswordFocusGained
 
     private void lbHelpMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbHelpMouseEntered
-        lbHelp.setText("<html><u>need help?</u></html>");
+        lbHelp.setText("<html><u>Need help?</u></html>");
     }//GEN-LAST:event_lbHelpMouseEntered
 
     private void lbHelpMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbHelpMouseExited
-        lbHelp.setText("need help?");
+        lbHelp.setText("Need help?");
     }//GEN-LAST:event_lbHelpMouseExited
 
     private void lbHelpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbHelpMouseClicked
@@ -315,8 +313,7 @@ public class logIn extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(logIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -338,7 +335,8 @@ public class logIn extends javax.swing.JFrame {
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 
-        
+        //**--custom function--**
+    
     private void validationInput(String Input) {
         String input = Input;
         
