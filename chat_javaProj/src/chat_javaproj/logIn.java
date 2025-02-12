@@ -169,7 +169,7 @@ public class logIn extends javax.swing.JFrame {
                 .addComponent(lbTitle)
                 .addGap(18, 18, 18)
                 .addComponent(lbUsername)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(iconUsername))
@@ -232,12 +232,10 @@ public class logIn extends javax.swing.JFrame {
 
     private void txtUsernameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsernameKeyReleased
         Input = txtUsername.getText();
-//        validationInput(Input);
     }//GEN-LAST:event_txtUsernameKeyReleased
 
     private void txtPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyReleased
         InputPW = txtPassword.getText();
-//        validationInputPW(InputPW);
     }//GEN-LAST:event_txtPasswordKeyReleased
 
     private void txtUsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUsernameFocusGained
