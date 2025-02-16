@@ -9,7 +9,6 @@ public class rsuApp extends javax.swing.JFrame {
      */
     public rsuApp() {
         initComponents();
-        
     }
 
     String userMSG;

@@ -9,8 +9,6 @@ import javax.swing.border.Border;
 
 
 public class logIn extends javax.swing.JFrame {
-    // call another app
-    rsuApp app = new rsuApp();
     
     public logIn() {
         initComponents();
@@ -169,7 +167,7 @@ public class logIn extends javax.swing.JFrame {
                 .addComponent(lbTitle)
                 .addGap(18, 18, 18)
                 .addComponent(lbUsername)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(iconUsername))
@@ -203,8 +201,9 @@ public class logIn extends javax.swing.JFrame {
         InputPW = txtPassword.getText();
         if ((Input.length() + InputPW.length()) == 20) {
             this.setVisible(false);
-            app.setVisible(true);
-            app.setLocationRelativeTo(this);
+            System.out.println("Here");
+            loadingComponent loadingCom = new loadingComponent();
+            loadingCom.setVisible(true);
             
         } else {
            JOptionPane.showConfirmDialog(null, "not found 404", "Warning", JOptionPane.CLOSED_OPTION, JOptionPane.WARNING_MESSAGE);

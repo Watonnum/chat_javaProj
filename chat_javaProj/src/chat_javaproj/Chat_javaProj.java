@@ -15,8 +15,7 @@ public class Chat_javaProj {
      */
     public static void main(String[] args) {
        logIn login = new logIn();
-//       Client cli = new Client();
-//       Server sv = new Server();
+
        
        
        login.setVisible(true);
