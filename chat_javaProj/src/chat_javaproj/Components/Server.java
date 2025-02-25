@@ -1,5 +1,5 @@
 
-package chat_javaproj;
+package chat_javaproj.Components;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

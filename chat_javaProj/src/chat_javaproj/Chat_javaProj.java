@@ -4,6 +4,8 @@
  */
 package chat_javaproj;
 
+import chat_javaproj.Components.logIn;
+
 /**
  *
  * @author ipae
@@ -15,11 +17,10 @@ public class Chat_javaProj {
      */
     public static void main(String[] args) {
        logIn login = new logIn();
-
-       
-       
        login.setVisible(true);
        login.setLocationRelativeTo(null);
+       
+       
     }
     
 }

@@ -1,5 +1,6 @@
-package chat_javaproj;
+package chat_javaproj.Components;
 
+import chat_javaproj.Components.loadingComponent;
 import java.awt.Color;
 import java.awt.Desktop;
 import java.net.URI;
