@@ -4,10 +4,6 @@
  */
 package chat_javaproj.Components;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import javax.swing.JLabel;
 import org.json.JSONObject;
 

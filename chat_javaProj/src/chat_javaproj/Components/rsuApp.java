@@ -18,7 +18,7 @@ public class rsuApp extends javax.swing.JFrame {
     public rsuApp() {
         initComponents();
         txtSearching.setVisible(false); 
-        jTabbedPane1.setSelectedIndex(3);
+        jTabbedPane1.setSelectedIndex(0);
     }
 
 
@@ -30,7 +30,7 @@ public class rsuApp extends javax.swing.JFrame {
         jPanel16 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        titleState = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         lbNotification = new javax.swing.JLabel();
@@ -133,10 +133,10 @@ public class rsuApp extends javax.swing.JFrame {
         jLabel1.setText("l");
         jPanel16.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 17, -1, 37));
 
-        jLabel2.setFont(new java.awt.Font("K2D", 0, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Ipae_");
-        jPanel16.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 17, -1, 37));
+        titleState.setFont(new java.awt.Font("K2D", 0, 36)); // NOI18N
+        titleState.setForeground(new java.awt.Color(255, 255, 255));
+        titleState.setText("Ipae_");
+        jPanel16.add(titleState, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 17, -1, 37));
 
         jLabel3.setFont(new java.awt.Font(".AppleSystemUIFont", 0, 50)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
@@ -1138,10 +1138,14 @@ public class rsuApp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSearchingActionPerformed
 //final boolean[] isOne = {false}; // เริ่มต้นที่ 1
-
+        
+    private boolean isVisible = false;
+    
     private void lbSearchingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbSearchingMouseClicked
         // TODO add your handling code here:
-         txtSearching.setVisible(true);
+         txtSearching.setVisible(!isVisible);
+         isVisible = !isVisible;
+         
          txtSearching.requestFocus();
        
     }//GEN-LAST:event_lbSearchingMouseClicked
@@ -1154,7 +1158,9 @@ public class rsuApp extends javax.swing.JFrame {
     private void pnOverviewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnOverviewMouseClicked
         // TODO add your handling code here:
         jTabbedPane1.setSelectedIndex(0);
+        titleState.setText(lbOverview.getText());
         pnOverview.setBackground(new Color(50, 50, 50));
+        
         try {
             
         String url = "https://api.exchangerate.host/live?access_key=beb5978d539bc75cba9b77e170dcc526";
@@ -1177,7 +1183,7 @@ public class rsuApp extends javax.swing.JFrame {
         } //try
         
         catch (Exception e) {
-            
+            System.out.println(e);
         }// catchErr
         
     }//GEN-LAST:event_pnOverviewMouseClicked
@@ -1185,16 +1191,19 @@ public class rsuApp extends javax.swing.JFrame {
     private void pnUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnUsersMouseClicked
         // TODO add your handling code here:
         jTabbedPane1.setSelectedIndex(1);
+        titleState.setText(lbUsers.getText());
     }//GEN-LAST:event_pnUsersMouseClicked
 
     private void pnChartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnChartMouseClicked
         // TODO add your handling code here:
         jTabbedPane1.setSelectedIndex(2);
+        titleState.setText(lbChart.getText());
     }//GEN-LAST:event_pnChartMouseClicked
 
     private void pnSettingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnSettingMouseClicked
         // TODO add your handling code here:
         jTabbedPane1.setSelectedIndex(3);
+        titleState.setText(lbSetting.getText());
     }//GEN-LAST:event_pnSettingMouseClicked
 
     private void pnAUDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnAUDMouseClicked
@@ -1316,7 +1325,6 @@ public class rsuApp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
@@ -1393,6 +1401,7 @@ public class rsuApp extends javax.swing.JFrame {
     private javax.swing.JPanel pnOverview;
     private javax.swing.JPanel pnSetting;
     private javax.swing.JPanel pnUsers;
+    private javax.swing.JLabel titleState;
     private javax.swing.JTextField txtSearching;
     // End of variables declaration//GEN-END:variables
 
