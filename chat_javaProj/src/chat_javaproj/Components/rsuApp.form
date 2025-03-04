@@ -509,7 +509,7 @@
                           <Component id="jPanel8" alignment="0" max="32767" attributes="0"/>
                           <Component id="jPanel11" alignment="1" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="115" max="32767" attributes="0"/>
+                      <EmptySpace pref="137" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -629,7 +629,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="price AUD"/>
+                    <Property name="text" type="java.lang.String" value="unknown"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbPrice1">
@@ -678,7 +678,7 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="lbContry2" pref="126" max="32767" attributes="0"/>
+                                  <Component id="lbContry2" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -742,7 +742,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="price CAD"/>
+                    <Property name="text" type="java.lang.String" value="unknown"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbContryName2">
@@ -791,7 +791,7 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="lbContry3" pref="126" max="32767" attributes="0"/>
+                                  <Component id="lbContry3" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -844,7 +844,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="$"/>
+                    <Property name="text" type="java.lang.String" value="&#xa5;"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbContry3">
@@ -855,7 +855,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="price JPY"/>
+                    <Property name="text" type="java.lang.String" value="unknown"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbContryName3">
@@ -866,7 +866,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="99" green="99" red="99" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="JPY - Japan"/>
+                    <Property name="text" type="java.lang.String" value="JPY - Japanese Yen"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbPrice3">
@@ -957,7 +957,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="$"/>
+                    <Property name="text" type="java.lang.String" value="&#x20a9;"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbContry5">
@@ -968,7 +968,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="price AUD"/>
+                    <Property name="text" type="java.lang.String" value="unknown"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbContryName5">
@@ -979,7 +979,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="99" green="99" red="99" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="KRW - South Korea"/>
+                    <Property name="text" type="java.lang.String" value="KRW - South Korean Won "/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbPrice5">
@@ -1017,7 +1017,7 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="lbContry4" pref="114" max="32767" attributes="0"/>
+                                  <Component id="lbContry4" pref="117" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -1070,7 +1070,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="$"/>
+                    <Property name="text" type="java.lang.String" value="&#x20b9;"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbContry4">
@@ -1081,7 +1081,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="price INR"/>
+                    <Property name="text" type="java.lang.String" value="unknown"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbContryName4">
@@ -1092,7 +1092,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="99" green="99" red="99" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="INR - India"/>
+                    <Property name="text" type="java.lang.String" value="INR - Indian Rupee"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbPrice4">
@@ -1130,8 +1130,8 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="lbContry6" max="32767" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="lbContry6" min="-2" pref="111" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="lbContryName6" max="32767" attributes="0"/>
@@ -1183,7 +1183,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="$"/>
+                    <Property name="text" type="java.lang.String" value="S$"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbContry6">
@@ -1194,7 +1194,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="price AUD"/>
+                    <Property name="text" type="java.lang.String" value="unknown"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbContryName6">
@@ -1205,7 +1205,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="99" green="99" red="99" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="AUD - Australian Dolla"/>
+                    <Property name="text" type="java.lang.String" value="SGN - Singapore Dollar"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbPrice6">
@@ -1296,7 +1296,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="$"/>
+                    <Property name="text" type="java.lang.String" value="R$"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbContry8">
@@ -1307,7 +1307,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="price AUD"/>
+                    <Property name="text" type="java.lang.String" value="unknown"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbContryName8">
@@ -1318,7 +1318,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="99" green="99" red="99" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="AUD - Australian Dolla"/>
+                    <Property name="text" type="java.lang.String" value="BRL - Brazilian Real"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbPrice8">
@@ -1353,10 +1353,10 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="lbContry7" max="32767" attributes="0"/>
+                                  <Component id="jLabel34" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="lbContry7" pref="116" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -1409,7 +1409,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="$"/>
+                    <Property name="text" type="java.lang.String" value="&#xe3f;"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbContry7">
@@ -1420,7 +1420,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="price AUD"/>
+                    <Property name="text" type="java.lang.String" value="unknown"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbContryName7">
@@ -1431,7 +1431,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="99" green="99" red="99" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="AUD - Australian Dolla"/>
+                    <Property name="text" type="java.lang.String" value="THB - Thai Baht"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbPrice7">
@@ -1522,7 +1522,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="$"/>
+                    <Property name="text" type="java.lang.String" value="&#x20ac;"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbContry9">
@@ -1533,7 +1533,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="price AUD"/>
+                    <Property name="text" type="java.lang.String" value="unknown"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbContryName9">
@@ -1544,7 +1544,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="99" green="99" red="99" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="AUD - Australian Dolla"/>
+                    <Property name="text" type="java.lang.String" value="EUR - Euro"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbPrice9">

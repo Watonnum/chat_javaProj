@@ -18,9 +18,6 @@ public class Chat_javaProj {
     public static void main(String[] args) {
        logIn login = new logIn();
        login.setVisible(true);
-       login.setLocationRelativeTo(null);
-       
-       
     }
     
 }

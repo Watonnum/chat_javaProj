@@ -380,7 +380,7 @@ public class rsuApp extends javax.swing.JFrame {
 
         lbContry1.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
         lbContry1.setForeground(new java.awt.Color(255, 255, 255));
-        lbContry1.setText("price AUD");
+        lbContry1.setText("unknown");
 
         lbPrice1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lbPrice1.setForeground(new java.awt.Color(255, 255, 255));
@@ -441,7 +441,7 @@ public class rsuApp extends javax.swing.JFrame {
 
         lbContry2.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
         lbContry2.setForeground(new java.awt.Color(255, 255, 255));
-        lbContry2.setText("price CAD");
+        lbContry2.setText("unknown");
 
         lbContryName2.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lbContryName2.setForeground(new java.awt.Color(153, 153, 153));
@@ -466,7 +466,7 @@ public class rsuApp extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbContry2, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                        .addComponent(lbContry2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(lbContryName2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -498,15 +498,15 @@ public class rsuApp extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Thonburi", 1, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("$");
+        jLabel14.setText("¥");
 
         lbContry3.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
         lbContry3.setForeground(new java.awt.Color(255, 255, 255));
-        lbContry3.setText("price JPY");
+        lbContry3.setText("unknown");
 
         lbContryName3.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lbContryName3.setForeground(new java.awt.Color(153, 153, 153));
-        lbContryName3.setText("JPY - Japan");
+        lbContryName3.setText("JPY - Japanese Yen");
 
         lbPrice3.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lbPrice3.setForeground(new java.awt.Color(255, 255, 255));
@@ -527,7 +527,7 @@ public class rsuApp extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbContry3, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                        .addComponent(lbContry3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(lbContryName3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -559,15 +559,15 @@ public class rsuApp extends javax.swing.JFrame {
 
         jLabel30.setFont(new java.awt.Font("Thonburi", 1, 24)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel30.setText("$");
+        jLabel30.setText("₩");
 
         lbContry5.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
         lbContry5.setForeground(new java.awt.Color(255, 255, 255));
-        lbContry5.setText("price AUD");
+        lbContry5.setText("unknown");
 
         lbContryName5.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lbContryName5.setForeground(new java.awt.Color(153, 153, 153));
-        lbContryName5.setText("KRW - South Korea");
+        lbContryName5.setText("KRW - South Korean Won ");
 
         lbPrice5.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lbPrice5.setForeground(new java.awt.Color(255, 255, 255));
@@ -620,15 +620,15 @@ public class rsuApp extends javax.swing.JFrame {
 
         jLabel28.setFont(new java.awt.Font("Thonburi", 1, 24)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel28.setText("$");
+        jLabel28.setText("₹");
 
         lbContry4.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
         lbContry4.setForeground(new java.awt.Color(255, 255, 255));
-        lbContry4.setText("price INR");
+        lbContry4.setText("unknown");
 
         lbContryName4.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lbContryName4.setForeground(new java.awt.Color(153, 153, 153));
-        lbContryName4.setText("INR - India");
+        lbContryName4.setText("INR - Indian Rupee");
 
         lbPrice4.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lbPrice4.setForeground(new java.awt.Color(255, 255, 255));
@@ -649,7 +649,7 @@ public class rsuApp extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel28)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbContry4, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+                        .addComponent(lbContry4, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(lbContryName4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -681,15 +681,15 @@ public class rsuApp extends javax.swing.JFrame {
 
         jLabel32.setFont(new java.awt.Font("Thonburi", 1, 24)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel32.setText("$");
+        jLabel32.setText("S$");
 
         lbContry6.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
         lbContry6.setForeground(new java.awt.Color(255, 255, 255));
-        lbContry6.setText("price AUD");
+        lbContry6.setText("unknown");
 
         lbContryName6.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lbContryName6.setForeground(new java.awt.Color(153, 153, 153));
-        lbContryName6.setText("AUD - Australian Dolla");
+        lbContryName6.setText("SGN - Singapore Dollar");
 
         lbPrice6.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lbPrice6.setForeground(new java.awt.Color(255, 255, 255));
@@ -710,8 +710,8 @@ public class rsuApp extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel32)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbContry6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
+                        .addComponent(lbContry6, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(lbContryName6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
@@ -742,15 +742,15 @@ public class rsuApp extends javax.swing.JFrame {
 
         jLabel36.setFont(new java.awt.Font("Thonburi", 1, 24)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel36.setText("$");
+        jLabel36.setText("R$");
 
         lbContry8.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
         lbContry8.setForeground(new java.awt.Color(255, 255, 255));
-        lbContry8.setText("price AUD");
+        lbContry8.setText("unknown");
 
         lbContryName8.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lbContryName8.setForeground(new java.awt.Color(153, 153, 153));
-        lbContryName8.setText("AUD - Australian Dolla");
+        lbContryName8.setText("BRL - Brazilian Real");
 
         lbPrice8.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lbPrice8.setForeground(new java.awt.Color(255, 255, 255));
@@ -803,15 +803,15 @@ public class rsuApp extends javax.swing.JFrame {
 
         jLabel34.setFont(new java.awt.Font("Thonburi", 1, 24)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel34.setText("$");
+        jLabel34.setText("฿");
 
         lbContry7.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
         lbContry7.setForeground(new java.awt.Color(255, 255, 255));
-        lbContry7.setText("price AUD");
+        lbContry7.setText("unknown");
 
         lbContryName7.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lbContryName7.setForeground(new java.awt.Color(153, 153, 153));
-        lbContryName7.setText("AUD - Australian Dolla");
+        lbContryName7.setText("THB - Thai Baht");
 
         lbPrice7.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lbPrice7.setForeground(new java.awt.Color(255, 255, 255));
@@ -829,10 +829,10 @@ public class rsuApp extends javax.swing.JFrame {
                         .addGap(23, 23, 23))
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addComponent(jLabel33)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel34)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbContry7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbContry7, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addComponent(lbContryName7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -864,15 +864,15 @@ public class rsuApp extends javax.swing.JFrame {
 
         jLabel38.setFont(new java.awt.Font("Thonburi", 1, 24)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel38.setText("$");
+        jLabel38.setText("€");
 
         lbContry9.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
         lbContry9.setForeground(new java.awt.Color(255, 255, 255));
-        lbContry9.setText("price AUD");
+        lbContry9.setText("unknown");
 
         lbContryName9.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lbContryName9.setForeground(new java.awt.Color(153, 153, 153));
-        lbContryName9.setText("AUD - Australian Dolla");
+        lbContryName9.setText("EUR - Euro");
 
         lbPrice9.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lbPrice9.setForeground(new java.awt.Color(255, 255, 255));
@@ -939,7 +939,7 @@ public class rsuApp extends javax.swing.JFrame {
                     .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
         pnFormOverviewLayout.setVerticalGroup(
             pnFormOverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
