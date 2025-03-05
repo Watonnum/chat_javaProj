@@ -19,6 +19,31 @@ public class rsuApp extends javax.swing.JFrame {
         initComponents();
         txtSearching.setVisible(false); 
         jTabbedPane1.setSelectedIndex(0);
+        
+//        //handler
+//        try {
+//            
+//        String url = "https://api.exchangerate.host/live?access_key=beb5978d539bc75cba9b77e170dcc526";
+//        HttpURLConnection connect = (HttpURLConnection) new URL(url).openConnection();
+//        connect.setRequestMethod("GET");
+//
+//        BufferedReader bfReader = new BufferedReader(new InputStreamReader(connect.getInputStream()));
+//        StringBuilder response = new StringBuilder();
+//        String line;
+//        
+//        while ((line = bfReader.readLine()) != null) {            
+//            response.append(line);
+//        }
+//        
+//        bfReader.close();
+//        
+//        fetchAPI api = new fetchAPI();
+//        api.call(response.toString(),lbContry1,lbContry2,lbContry3,lbContry4,lbContry5,lbContry6,lbContry7,lbContry8,lbContry9,lbPrice1,lbPrice2,lbPrice3,lbPrice4,lbPrice5,lbPrice6,lbPrice7,lbPrice8,lbPrice9); //put response inform String
+//        
+//        } //try
+//        catch (Exception e) {
+//            System.out.println(e);
+//        }// catchErr
     }
 
 
@@ -136,6 +161,11 @@ public class rsuApp extends javax.swing.JFrame {
         titleState.setFont(new java.awt.Font("K2D", 0, 36)); // NOI18N
         titleState.setForeground(new java.awt.Color(255, 255, 255));
         titleState.setText("Ipae_");
+        titleState.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                titleStatePropertyChange(evt);
+            }
+        });
         jPanel16.add(titleState, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 17, -1, 37));
 
         jLabel3.setFont(new java.awt.Font(".AppleSystemUIFont", 0, 50)); // NOI18N
@@ -186,11 +216,12 @@ public class rsuApp extends javax.swing.JFrame {
                 lbAccountMouseEntered(evt);
             }
         });
-        jPanel16.add(lbAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 10, -1, -1));
+        jPanel16.add(lbAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 0, -1, 70));
 
         txtSearching.setBackground(new java.awt.Color(51, 51, 51));
         txtSearching.setColumns(20);
         txtSearching.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        txtSearching.setForeground(new java.awt.Color(255, 255, 255));
         txtSearching.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         txtSearching.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1157,35 +1188,9 @@ public class rsuApp extends javax.swing.JFrame {
 
     private void pnOverviewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnOverviewMouseClicked
         // TODO add your handling code here:
+        //handler
         jTabbedPane1.setSelectedIndex(0);
-        titleState.setText(lbOverview.getText());
-        pnOverview.setBackground(new Color(50, 50, 50));
-        
-        try {
-            
-        String url = "https://api.exchangerate.host/live?access_key=beb5978d539bc75cba9b77e170dcc526";
-        HttpURLConnection connect = (HttpURLConnection) new URL(url).openConnection();
-        connect.setRequestMethod("GET");
-
-        BufferedReader bfReader = new BufferedReader(new InputStreamReader(connect.getInputStream()));
-        StringBuilder response = new StringBuilder();
-        String line;
-        
-        while ((line = bfReader.readLine()) != null) {            
-            response.append(line);
-        }
-        
-        bfReader.close();
-        
-        fetchAPI api = new fetchAPI();
-        api.call(response.toString(),lbContry1,lbContry2,lbContry3,lbContry4,lbContry5,lbContry6,lbContry7,lbContry8,lbContry9,lbPrice1,lbPrice2,lbPrice3,lbPrice4,lbPrice5,lbPrice6,lbPrice7,lbPrice8,lbPrice9); //put response inform String
-        
-        } //try
-        
-        catch (Exception e) {
-            System.out.println(e);
-        }// catchErr
-        
+        titleState.setText(lbOverview.getText());       
     }//GEN-LAST:event_pnOverviewMouseClicked
 
     private void pnUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnUsersMouseClicked
@@ -1282,6 +1287,19 @@ public class rsuApp extends javax.swing.JFrame {
         // TODO add your handling code here:
         pnLogout.setBackground(Color.decode("#DD1616"));
     }//GEN-LAST:event_pnLogoutMousePressed
+
+    private void titleStatePropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_titleStatePropertyChange
+        // TODO add your handling code here:
+        if (pnOverview.hasFocus()) {
+            titleState.setText(lbOverview.getText());
+        } else if (pnUsers.hasFocus()) {
+            titleState.setText(lbUsers.getText());
+        } else if (pnChart.hasFocus()) {
+            titleState.setText(lbChart.getText());
+        } else if (pnSetting.hasFocus()) {
+            titleState.setText(lbSetting.getText());
+        } 
+    }//GEN-LAST:event_titleStatePropertyChange
 
     /**
      * @param args the command line arguments

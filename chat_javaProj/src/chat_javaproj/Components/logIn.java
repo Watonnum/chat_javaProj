@@ -199,11 +199,11 @@ public class logIn extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsernameKeyTyped
 
     private void txtUsernameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsernameKeyReleased
-//        Input = txtUsername.getText();
+
     }//GEN-LAST:event_txtUsernameKeyReleased
 
     private void txtPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyReleased
-//        InputPW = txtPassword.getText();
+
     }//GEN-LAST:event_txtPasswordKeyReleased
 
     private void txtUsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUsernameFocusGained
