@@ -131,7 +131,16 @@ public class rsuApp extends javax.swing.JFrame {
         lbContryName9 = new javax.swing.JLabel();
         lbPrice9 = new javax.swing.JLabel();
         pnFormUsers = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        User_txtUserInput = new javax.swing.JTextField();
+        User_cb2nd = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        User_cb1st = new javax.swing.JComboBox<>();
+        User_lbOutput = new javax.swing.JLabel();
+        User_lbRate = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
         pnFormChart = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         pnFormSetting = new javax.swing.JPanel();
@@ -218,7 +227,7 @@ public class rsuApp extends javax.swing.JFrame {
         });
         jPanel16.add(lbAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 0, -1, 70));
 
-        txtSearching.setBackground(new java.awt.Color(51, 51, 51));
+        txtSearching.setBackground(new java.awt.Color(204, 204, 204));
         txtSearching.setColumns(20);
         txtSearching.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         txtSearching.setForeground(new java.awt.Color(255, 255, 255));
@@ -995,25 +1004,79 @@ public class rsuApp extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab1", pnFormOverview);
 
-        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel6.setText("FORM 2");
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        User_txtUserInput.setColumns(10);
+        User_txtUserInput.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        User_txtUserInput.setText("UserInput");
+        User_txtUserInput.setToolTipText("UserInput");
+        User_txtUserInput.setMargin(new java.awt.Insets(2, 220, 2, 6));
+        User_txtUserInput.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                User_txtUserInputFocusGained(evt);
+            }
+        });
+        jPanel2.add(User_txtUserInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 40, 550, 60));
+
+        User_cb2nd.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        User_cb2nd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Australia", "Cannada", "Japan", "India", "South korea", "Singapore", "Thai", "Brazil", "Euro" }));
+        jPanel2.add(User_cb2nd, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_javaproj/icon/arrow_impli24px.png"))); // NOI18N
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 30, 30));
+
+        User_cb1st.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        User_cb1st.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Australia", "Cannada", "Japan", "India", "South korea", "Singapore", "Thai", "Brazil", "Euro" }));
+        jPanel2.add(User_cb1st, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 130, -1));
+
+        User_lbOutput.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        User_lbOutput.setText("224.32 EUR");
+        User_lbOutput.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                User_lbOutputPropertyChange(evt);
+            }
+        });
+        jPanel2.add(User_lbOutput, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, -1, -1));
+
+        User_lbRate.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        User_lbRate.setForeground(new java.awt.Color(153, 153, 153));
+        User_lbRate.setText("1  USD = 0.90 EUR");
+        jPanel2.add(User_lbRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_javaproj/icon/tap_64px.png"))); // NOI18N
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, -1, -1));
+
+        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel16.setFont(new java.awt.Font("Helvetica Neue", 1, 48)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel16.setText("GraphUI");
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, -1, -1));
 
         javax.swing.GroupLayout pnFormUsersLayout = new javax.swing.GroupLayout(pnFormUsers);
         pnFormUsers.setLayout(pnFormUsersLayout);
         pnFormUsersLayout.setHorizontalGroup(
             pnFormUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnFormUsersLayout.createSequentialGroup()
-                .addGap(558, 558, 558)
-                .addComponent(jLabel6)
-                .addContainerGap(543, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnFormUsersLayout.setVerticalGroup(
             pnFormUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnFormUsersLayout.createSequentialGroup()
-                .addGap(282, 282, 282)
-                .addComponent(jLabel6)
-                .addContainerGap(424, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(pnFormUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 729, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("tab2", pnFormUsers);
@@ -1301,6 +1364,61 @@ public class rsuApp extends javax.swing.JFrame {
         } 
     }//GEN-LAST:event_titleStatePropertyChange
 
+    private void User_txtUserInputFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_User_txtUserInputFocusGained
+        // TODO add your handling code here:
+        User_txtUserInput.setText("");
+    }//GEN-LAST:event_User_txtUserInputFocusGained
+
+    private void User_lbOutputPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_User_lbOutputPropertyChange
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_User_lbOutputPropertyChange
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        // TODO add your handling code here:
+        
+        switch (User_cb2nd.getSelectedIndex()) {
+            case 0 -> {
+                User_lbOutput.setText("224.33" + " AUD");
+            }
+            case 1 -> {
+                User_lbOutput.setText("224.33" + " CAD");
+            }
+            case 2 -> {
+                User_lbOutput.setText("224.33" + " JPY");
+            }
+            case 3 -> {
+                User_lbOutput.setText("224.33" + " INR");
+            }
+            case 4 -> {
+                User_lbOutput.setText("224.33" + " KRW");
+            }
+            case 5 -> {
+                User_lbOutput.setText("224.33" + " SGN");
+            }
+            case 6 -> {
+                User_lbOutput.setText("224.33" + " THB");
+            }
+            case 7 -> {
+                User_lbOutput.setText("224.33" + " BRL");
+            }
+            case 8 -> {
+                User_lbOutput.setText("224.33" + " EUR");
+            }            
+        }
+//        Australia
+//        Cannada
+//        Japan
+//        India
+//        South korea
+//        Singapore
+//        Thai
+//        Brazil
+//        Euro
+
+        System.out.println(User_cb2nd.getSelectedIndex());
+    }//GEN-LAST:event_jLabel6MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1337,12 +1455,19 @@ public class rsuApp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> User_cb1st;
+    private javax.swing.JComboBox<String> User_cb2nd;
+    private javax.swing.JLabel User_lbOutput;
+    private javax.swing.JLabel User_lbRate;
+    private javax.swing.JTextField User_txtUserInput;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
@@ -1366,6 +1491,8 @@ public class rsuApp extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
