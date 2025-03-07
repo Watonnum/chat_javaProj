@@ -39,7 +39,7 @@ public class rsuApp extends javax.swing.JFrame {
 //        
 //        fetchAPI api = new fetchAPI();
 //        api.call(response.toString(),lbContry1,lbContry2,lbContry3,lbContry4,lbContry5,lbContry6,lbContry7,lbContry8,lbContry9,lbPrice1,lbPrice2,lbPrice3,lbPrice4,lbPrice5,lbPrice6,lbPrice7,lbPrice8,lbPrice9); //put response inform String
-//        
+//
 //        } //try
 //        catch (Exception e) {
 //            System.out.println(e);
@@ -1020,14 +1020,14 @@ public class rsuApp extends javax.swing.JFrame {
         jPanel2.add(User_txtUserInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 40, 550, 60));
 
         User_cb2nd.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        User_cb2nd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Australia", "Cannada", "Japan", "India", "South korea", "Singapore", "Thai", "Brazil", "Euro" }));
-        jPanel2.add(User_cb2nd, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, -1, -1));
+        User_cb2nd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AUD", "CAD", "JPY", "INR", "KRW", "SGN", "THB", "BRL", "EUR" }));
+        jPanel2.add(User_cb2nd, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 130, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_javaproj/icon/arrow_impli24px.png"))); // NOI18N
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 30, 30));
 
         User_cb1st.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        User_cb1st.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Australia", "Cannada", "Japan", "India", "South korea", "Singapore", "Thai", "Brazil", "Euro" }));
+        User_cb1st.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AUD", "CAD", "JPY", "INR", "KRW", "SGN", "THB", "BRL", "EUR" }));
         jPanel2.add(User_cb1st, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 130, -1));
 
         User_lbOutput.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
@@ -1073,9 +1073,9 @@ public class rsuApp extends javax.swing.JFrame {
         pnFormUsersLayout.setVerticalGroup(
             pnFormUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnFormUsersLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 0, 0)
                 .addGroup(pnFormUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 729, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
@@ -1376,47 +1376,39 @@ public class rsuApp extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
+        try {
+        String contry1 = User_cb1st.getSelectedItem().toString();
+        String contry2 = User_cb2nd.getSelectedItem().toString();
+        String amount = Double.valueOf(User_txtUserInput.getText()) + "";
+            System.out.println(amount);
         
-        switch (User_cb2nd.getSelectedIndex()) {
-            case 0 -> {
-                User_lbOutput.setText("224.33" + " AUD");
-            }
-            case 1 -> {
-                User_lbOutput.setText("224.33" + " CAD");
-            }
-            case 2 -> {
-                User_lbOutput.setText("224.33" + " JPY");
-            }
-            case 3 -> {
-                User_lbOutput.setText("224.33" + " INR");
-            }
-            case 4 -> {
-                User_lbOutput.setText("224.33" + " KRW");
-            }
-            case 5 -> {
-                User_lbOutput.setText("224.33" + " SGN");
-            }
-            case 6 -> {
-                User_lbOutput.setText("224.33" + " THB");
-            }
-            case 7 -> {
-                User_lbOutput.setText("224.33" + " BRL");
-            }
-            case 8 -> {
-                User_lbOutput.setText("224.33" + " EUR");
-            }            
-        }
-//        Australia
-//        Cannada
-//        Japan
-//        India
-//        South korea
-//        Singapore
-//        Thai
-//        Brazil
-//        Euro
+        //apiShoot
+//        String url = "https://api.exchangerate.host/convert?from=" + contry1 + "&to=" + contry2 + "&amount=" + amount + "&access_key=beb5978d539bc75cba9b77e170dcc526";
 
-        System.out.println(User_cb2nd.getSelectedIndex());
+        //!apiShoot
+        String url2 = "https://api.exchangerate.host/live?access_key=beb5978d539bc75cba9b77e170dcc526";
+        HttpURLConnection connect = (HttpURLConnection) new URL(url2).openConnection();
+        connect.setRequestMethod("GET");
+
+        BufferedReader bfReader = new BufferedReader(new InputStreamReader(connect.getInputStream()));
+        StringBuilder response = new StringBuilder();
+        String line;
+        
+        while ((line = bfReader.readLine()) != null) {            
+            response.append(line);
+        }
+        
+        bfReader.close();
+        
+        fetchAPI api = new fetchAPI();
+//        api.changesFrom(response.toString(), User_cb1st, User_cb2nd, User_txtUserInput,User_lbOutput,contry2);
+        api.changes(response.toString(),User_cb1st, User_cb2nd, User_txtUserInput, User_lbOutput, contry1, contry2);
+
+        } catch (Exception ex) {
+            System.out.println("fetchAPI2nd_Error -----> " + ex);
+        }
+
+
     }//GEN-LAST:event_jLabel6MouseClicked
 
     /**

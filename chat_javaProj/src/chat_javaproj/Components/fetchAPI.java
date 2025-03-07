@@ -4,7 +4,10 @@
  */
 package chat_javaproj.Components;
 
+import java.text.DecimalFormat;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 import org.json.JSONObject;
 
 /**
@@ -16,7 +19,7 @@ public class fetchAPI {
     public fetchAPI() throws Exception {
     }
 
-    public void call(String res, JLabel lbContry1,JLabel lbContry2,JLabel lbContry3,JLabel lbContry4,JLabel lbContry5,JLabel lbContry6,JLabel lbContry7,JLabel lbContry8,JLabel lbContry9,JLabel lbPrice1,JLabel lbPrice2,JLabel lbPrice3,JLabel lbPrice4,JLabel lbPrice5,JLabel lbPrice6,JLabel lbPrice7,JLabel lbPrice8,JLabel lbPrice9) {
+    public void call(String res,JLabel lbContry1,JLabel lbContry2,JLabel lbContry3,JLabel lbContry4,JLabel lbContry5,JLabel lbContry6,JLabel lbContry7,JLabel lbContry8,JLabel lbContry9,JLabel lbPrice1,JLabel lbPrice2,JLabel lbPrice3,JLabel lbPrice4,JLabel lbPrice5,JLabel lbPrice6,JLabel lbPrice7,JLabel lbPrice8,JLabel lbPrice9) {
         JSONObject json = new JSONObject(res);
         
         // ตรวจสอบว่า API ส่งข้อมูลมาได้จริง
@@ -66,5 +69,43 @@ public class fetchAPI {
         
     }
 
-      
+    public void changesFrom(String res, JComboBox User_cb1st, JComboBox User_cb2nd, JTextField User_txtUserInput,JLabel User_lbOutput,String contry) {
+        JSONObject json = new JSONObject(res);
+        
+        // ตรวจสอบว่า API ส่งข้อมูลมาได้จริง
+        if (!json.getBoolean("success")) {
+            System.out.println("API Error: ไม่สามารถดึงข้อมูลได้");
+            return;
+        }
+
+        double result = json.getDouble("result");
+        System.out.println(result);
+        
+        User_lbOutput.setText(result + " " + contry);
+    }
+    //apiShoot
+    
+    public void changes(String res, JComboBox User_cb1st, JComboBox User_cb2nd, JTextField User_txtUserInput,JLabel User_lbOutput, String contry1, String contry2) {
+        JSONObject json = new JSONObject(res);
+        DecimalFormat f = new DecimalFormat("#,##0.00");
+        
+        // ตรวจสอบว่า API ส่งข้อมูลมาได้จริง
+        if (!json.getBoolean("success")) {
+            System.out.println("API Error: ไม่สามารถดึงข้อมูลได้");
+            return;
+        }
+
+        JSONObject quotes = json.getJSONObject("quotes");
+        
+
+        double answer1 = quotes.getDouble("USD" + contry1);
+        double answer2 = quotes.getDouble("USD" + contry2);
+        double UserInput = Double.parseDouble(User_txtUserInput.getText()); // take answer1 to double
+        
+        double temp = (UserInput*1)/answer1;
+        double result = temp * answer2;
+        
+        User_lbOutput.setText(f.format(result) + " " + contry2);
+    }
+    //non-apiShoot
 }
