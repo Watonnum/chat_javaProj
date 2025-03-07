@@ -11,6 +11,7 @@ import java.net.URL;
 
 public class rsuApp extends javax.swing.JFrame {
 
+    StringBuilder response = new StringBuilder();
     
     /**
      * Creates new form rsuApp
@@ -20,30 +21,32 @@ public class rsuApp extends javax.swing.JFrame {
         txtSearching.setVisible(false); 
         jTabbedPane1.setSelectedIndex(0);
         
-//        //handler
-//        try {
-//            
-//        String url = "https://api.exchangerate.host/live?access_key=beb5978d539bc75cba9b77e170dcc526";
-//        HttpURLConnection connect = (HttpURLConnection) new URL(url).openConnection();
-//        connect.setRequestMethod("GET");
-//
-//        BufferedReader bfReader = new BufferedReader(new InputStreamReader(connect.getInputStream()));
-//        StringBuilder response = new StringBuilder();
-//        String line;
-//        
-//        while ((line = bfReader.readLine()) != null) {            
-//            response.append(line);
-//        }
-//        
-//        bfReader.close();
-//        
-//        fetchAPI api = new fetchAPI();
-//        api.call(response.toString(),lbContry1,lbContry2,lbContry3,lbContry4,lbContry5,lbContry6,lbContry7,lbContry8,lbContry9,lbPrice1,lbPrice2,lbPrice3,lbPrice4,lbPrice5,lbPrice6,lbPrice7,lbPrice8,lbPrice9); //put response inform String
-//
-//        } //try
-//        catch (Exception e) {
-//            System.out.println(e);
-//        }// catchErr
+        
+        //handler
+        try {
+        //  apiShoot
+//      String url = "https://api.exchangerate.host/convert?from=" + contry1 + "&to=" + contry2 + "&amount=" + amount + "&access_key=beb5978d539bc75cba9b77e170dcc526";    
+        String url = "https://api.exchangerate.host/live?access_key=beb5978d539bc75cba9b77e170dcc526";
+        HttpURLConnection connect = (HttpURLConnection) new URL(url).openConnection();
+        connect.setRequestMethod("GET");
+
+        BufferedReader bfReader = new BufferedReader(new InputStreamReader(connect.getInputStream()));
+        response = new StringBuilder();
+        String line;
+        
+        while ((line = bfReader.readLine()) != null) {            
+            response.append(line);
+        }
+        
+        bfReader.close();
+        
+        fetchAPI api = new fetchAPI();
+        api.call(response.toString(),lbContry1,lbContry2,lbContry3,lbContry4,lbContry5,lbContry6,lbContry7,lbContry8,lbContry9,lbPrice1,lbPrice2,lbPrice3,lbPrice4,lbPrice5,lbPrice6,lbPrice7,lbPrice8,lbPrice9); //put response inform String
+
+        }
+        catch (Exception e) {
+            System.out.println(e);
+        }// catchErr
     }
 
 
@@ -1011,13 +1014,17 @@ public class rsuApp extends javax.swing.JFrame {
         User_txtUserInput.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         User_txtUserInput.setText("UserInput");
         User_txtUserInput.setToolTipText("UserInput");
-        User_txtUserInput.setMargin(new java.awt.Insets(2, 220, 2, 6));
+        User_txtUserInput.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        User_txtUserInput.setMargin(new java.awt.Insets(2, 0, 2, 6));
         User_txtUserInput.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 User_txtUserInputFocusGained(evt);
             }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                User_txtUserInputFocusLost(evt);
+            }
         });
-        jPanel2.add(User_txtUserInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 40, 550, 60));
+        jPanel2.add(User_txtUserInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 150, 60));
 
         User_cb2nd.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         User_cb2nd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AUD", "CAD", "JPY", "INR", "KRW", "SGN", "THB", "BRL", "EUR" }));
@@ -1042,7 +1049,7 @@ public class rsuApp extends javax.swing.JFrame {
         User_lbRate.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         User_lbRate.setForeground(new java.awt.Color(153, 153, 153));
         User_lbRate.setText("1  USD = 0.90 EUR");
-        jPanel2.add(User_lbRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, -1, -1));
+        jPanel2.add(User_lbRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 470, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_javaproj/icon/tap_64px.png"))); // NOI18N
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1073,10 +1080,10 @@ public class rsuApp extends javax.swing.JFrame {
         pnFormUsersLayout.setVerticalGroup(
             pnFormUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnFormUsersLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
+                .addContainerGap()
                 .addGroup(pnFormUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 729, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("tab2", pnFormUsers);
@@ -1361,7 +1368,7 @@ public class rsuApp extends javax.swing.JFrame {
             titleState.setText(lbChart.getText());
         } else if (pnSetting.hasFocus()) {
             titleState.setText(lbSetting.getText());
-        } 
+        }
     }//GEN-LAST:event_titleStatePropertyChange
 
     private void User_txtUserInputFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_User_txtUserInputFocusGained
@@ -1380,28 +1387,9 @@ public class rsuApp extends javax.swing.JFrame {
         String contry1 = User_cb1st.getSelectedItem().toString();
         String contry2 = User_cb2nd.getSelectedItem().toString();
         String amount = Double.valueOf(User_txtUserInput.getText()) + "";
-            System.out.println(amount);
         
-        //apiShoot
-//        String url = "https://api.exchangerate.host/convert?from=" + contry1 + "&to=" + contry2 + "&amount=" + amount + "&access_key=beb5978d539bc75cba9b77e170dcc526";
 
-        //!apiShoot
-        String url2 = "https://api.exchangerate.host/live?access_key=beb5978d539bc75cba9b77e170dcc526";
-        HttpURLConnection connect = (HttpURLConnection) new URL(url2).openConnection();
-        connect.setRequestMethod("GET");
-
-        BufferedReader bfReader = new BufferedReader(new InputStreamReader(connect.getInputStream()));
-        StringBuilder response = new StringBuilder();
-        String line;
-        
-        while ((line = bfReader.readLine()) != null) {            
-            response.append(line);
-        }
-        
-        bfReader.close();
-        
         fetchAPI api = new fetchAPI();
-//        api.changesFrom(response.toString(), User_cb1st, User_cb2nd, User_txtUserInput,User_lbOutput,contry2);
         api.changes(response.toString(),User_cb1st, User_cb2nd, User_txtUserInput, User_lbOutput, contry1, contry2);
 
         } catch (Exception ex) {
@@ -1410,6 +1398,13 @@ public class rsuApp extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void User_txtUserInputFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_User_txtUserInputFocusLost
+        // TODO add your handling code here:
+        if (User_txtUserInput.getText().equals("")) {
+            User_txtUserInput.setText("UserInput");
+        }
+    }//GEN-LAST:event_User_txtUserInputFocusLost
 
     /**
      * @param args the command line arguments
