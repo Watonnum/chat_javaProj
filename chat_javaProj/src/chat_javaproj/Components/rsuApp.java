@@ -1395,7 +1395,9 @@ public class rsuApp extends javax.swing.JFrame {
         } catch (Exception ex) {
             System.out.println("fetchAPI2nd_Error -----> " + ex);
         }
-
+        
+        // insert Table 5 column to Database
+        // ID, username_used, currency1, currency2, date(now)
 
     }//GEN-LAST:event_jLabel6MouseClicked
 

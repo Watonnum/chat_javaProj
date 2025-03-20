@@ -8,6 +8,12 @@ import javax.swing.JOptionPane;
 import javax.swing.border.Border;
 
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+
 public class logIn extends javax.swing.JFrame {
     
     public logIn() {
@@ -163,27 +169,47 @@ public class logIn extends javax.swing.JFrame {
     Border borderTouch= BorderFactory.createLineBorder(Color.BLACK, 2);
     
     // ***--------Variable-------------***
-    String Input = "",InputPW = "";
+    String Username = "",Password = "";
     
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        Input = txtUsername.getText();
-        InputPW = txtPassword.getText();
-        if ((Input.length() + InputPW.length()) == 20) {
+        Username = txtUsername.getText();
+        Password = txtPassword.getText();
+//        if ((Input.length() + InputPW.length()) == 20) {
+//            this.setVisible(false);
+//            System.out.println("Here");
+//            loadingComponent loadingCom = new loadingComponent();
+//            loadingCom.setVisible(true);
+//            
+//        } else {
+//           JOptionPane.showConfirmDialog(null, "not found 404", "Warning", JOptionPane.CLOSED_OPTION, JOptionPane.WARNING_MESSAGE);
+//           
+//           if(Input.length() == 7) {
+//               txtPassword.requestFocus();
+//           } else {
+//               txtUsername.requestFocus();
+//           }
+//        }
+
+         try (Connection conn = databaseConnection.connect()) {
+        String sql = "SELECT * FROM class_Account WHERE Username = ? AND Password = ?";
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        pstmt.setString(1, Username);
+        pstmt.setString(2, Password);
+
+        ResultSet rs = pstmt.executeQuery();
+
+        if (rs.next()) {
+            JOptionPane.showMessageDialog(null, "Login Successful");
             this.setVisible(false);
-            System.out.println("Here");
-            loadingComponent loadingCom = new loadingComponent();
-            loadingCom.setVisible(true);
-            
+            new loadingComponent().setVisible(true);
         } else {
-           JOptionPane.showConfirmDialog(null, "not found 404", "Warning", JOptionPane.CLOSED_OPTION, JOptionPane.WARNING_MESSAGE);
-           
-           if(Input.length() == 7) {
-               txtPassword.requestFocus();
-           } else {
-               txtUsername.requestFocus();
-           }
+            JOptionPane.showMessageDialog(null, "Invalid Username or Password", "Login Failed", JOptionPane.ERROR_MESSAGE);
         }
-        
+    } catch (SQLException e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(null, "Database Error", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+         
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
@@ -207,8 +233,8 @@ public class logIn extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPasswordKeyReleased
 
     private void txtUsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUsernameFocusGained
-        Input = txtUsername.getText();
-        boolean on_off = Input.isEmpty();
+        Username = txtUsername.getText();
+        boolean on_off = Username.isEmpty();
         
         if (on_off) {
             txtUsername.setBorder(borderTouch);
@@ -216,8 +242,8 @@ public class logIn extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsernameFocusGained
 
     private void txtPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPasswordFocusGained
-        Input = txtPassword.getText();
-        boolean on_off = Input.isEmpty();
+        Password = txtPassword.getText();
+        boolean on_off = Password.isEmpty();
         
         if (on_off) {
             txtPassword.setBorder(borderTouch);
@@ -308,27 +334,27 @@ public class logIn extends javax.swing.JFrame {
 
         //**--custom function--**
     
-    private void validationInput(String Input) {
-        String input = Input;
-        
-        int lengthInput = input.length();
-        
-        if (lengthInput == 7) {         //6708767
-            txtUsername.setBorder(borderW);
-        } 
-        else
-        txtUsername.setBorder(borderR);
-    }
-
-    private void validationInputPW(String InputPW) {
-        String input = InputPW;
-        
-        int lengthInput = input.length();
-        
-        if (lengthInput == 13) {         // 1200901241039
-            txtPassword.setBorder(borderW);
-        } 
-        else
-        txtPassword.setBorder(borderR);
-    }
+//    private void validationInput(String Input) {
+//        String input = Input;
+//        
+//        int lengthInput = input.length();
+//        
+//        if (lengthInput == 7) {         //6708767
+//            txtUsername.setBorder(borderW);
+//        } 
+//        else
+//        txtUsername.setBorder(borderR);
+//    }
+//
+//    private void validationInputPW(String InputPW) {
+//        String input = InputPW;
+//        
+//        int lengthInput = input.length();
+//        
+//        if (lengthInput == 13) {         // 1200901241039
+//            txtPassword.setBorder(borderW);
+//        } 
+//        else
+//        txtPassword.setBorder(borderR);
+//    }
 }

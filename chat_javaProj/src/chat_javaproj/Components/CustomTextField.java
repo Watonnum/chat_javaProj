@@ -36,7 +36,7 @@ public class CustomTextField extends JTextField {
         // วาดขอบมน
         g2.setColor(Color.GRAY); // สีขอบ
         
-        validateFN(g2);
+//        validateFN(g2);
         
         g2.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, cornerRadius, cornerRadius);
 
