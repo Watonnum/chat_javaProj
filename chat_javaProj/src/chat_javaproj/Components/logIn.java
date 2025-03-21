@@ -174,6 +174,9 @@ public class logIn extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         Username = txtUsername.getText();
         Password = txtPassword.getText();
+        
+// =============================   old logic =============================
+//
 //        if ((Input.length() + InputPW.length()) == 20) {
 //            this.setVisible(false);
 //            System.out.println("Here");
@@ -189,9 +192,12 @@ public class logIn extends javax.swing.JFrame {
 //               txtUsername.requestFocus();
 //           }
 //        }
+//
+// =============================   old logic =============================
 
-         try (Connection conn = databaseConnection.connect()) {
-        String sql = "SELECT * FROM class_Account WHERE Username = ? AND Password = ?";
+// =============================   valid Login system new logic =============================
+         try (Connection conn = databaseConnection.connect()) {  // call Class "databaseConnection"
+        String sql = "SELECT * FROM class_Account WHERE Username = ? AND Password = ?"; // view class_Account at Username&Password's column
         PreparedStatement pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, Username);
         pstmt.setString(2, Password);
@@ -209,7 +215,8 @@ public class logIn extends javax.swing.JFrame {
         e.printStackTrace();
         JOptionPane.showMessageDialog(null, "Database Error", "Error", JOptionPane.ERROR_MESSAGE);
     }
-         
+// =============================   valid Login system new logic =============================
+
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed

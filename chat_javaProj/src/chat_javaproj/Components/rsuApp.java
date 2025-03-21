@@ -6,6 +6,11 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Date;
+import javax.swing.JOptionPane;
 
 
 
@@ -1399,6 +1404,31 @@ public class rsuApp extends javax.swing.JFrame {
         // insert Table 5 column to Database
         // ID, username_used, currency1, currency2, date(now)
 
+        
+// =============================== SQL Insert data ===============================
+
+        try (Connection conn = databaseConnection.connect()) {
+            int i = 0;
+            String insertQuery = "INSERT INTO class_addData (ID, username, currencyFrom, currencyTo, date) VALUES (?, ?, ?, ?, ?)";
+            PreparedStatement pstmt = conn.prepareStatement(insertQuery);
+            
+            pstmt.setInt(1, i++);
+            pstmt.setString(2, lbAccount.getText());
+            pstmt.setString(3, User_txtUserInput.getText() + User_cb1st.getSelectedItem().toString());
+            pstmt.setString(4, User_cb2nd.getSelectedItem().toString());
+            pstmt.setString(5, new Date().toString());
+            
+            pstmt.executeUpdate();
+            
+            System.out.println(lbAccount.getText());
+            System.out.println(User_txtUserInput.getText() + " " + User_cb1st.getSelectedItem().toString());
+            System.out.println(User_cb2nd.getSelectedItem().toString());
+            System.out.println(new Date().toString());
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e, "Insertdata Error",JOptionPane.ERROR);
+        }
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void User_txtUserInputFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_User_txtUserInputFocusLost
