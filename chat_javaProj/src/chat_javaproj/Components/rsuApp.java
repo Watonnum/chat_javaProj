@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import java.sql.ResultSet;
 
 
 
@@ -1408,11 +1409,20 @@ public class rsuApp extends javax.swing.JFrame {
 // =============================== SQL Insert data ===============================
 
         try (Connection conn = databaseConnection.connect()) {
-            int i = 0;
-            String insertQuery = "INSERT INTO class_addData (ID, username, currencyFrom, currencyTo, date) VALUES (?, ?, ?, ?, ?)";
+            String insertQuery = "INSERT INTO class_insertData (ID, username, currencyFrom, currencyTo, date) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(insertQuery);
             
-            pstmt.setInt(1, i++);
+            String queryCheckID = "SELECT MAX(ID) FROM class_insertData";
+            PreparedStatement pstmt2 = conn.prepareStatement(queryCheckID);
+            ResultSet rs = pstmt2.executeQuery();
+            
+            int id = 0;
+            
+            if (rs.next()) {
+                id = rs.getInt(1) + 1;
+            }
+            
+            pstmt.setInt(1, id);
             pstmt.setString(2, lbAccount.getText());
             pstmt.setString(3, User_txtUserInput.getText() + User_cb1st.getSelectedItem().toString());
             pstmt.setString(4, User_cb2nd.getSelectedItem().toString());
