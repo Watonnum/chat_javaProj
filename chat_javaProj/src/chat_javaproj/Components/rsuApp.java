@@ -33,6 +33,7 @@ public class rsuApp extends javax.swing.JFrame {
         //  apiShoot
 //      String url = "https://api.exchangerate.host/convert?from=" + contry1 + "&to=" + contry2 + "&amount=" + amount + "&access_key=beb5978d539bc75cba9b77e170dcc526";    
         String url = "https://api.exchangerate.host/live?access_key=beb5978d539bc75cba9b77e170dcc526";
+        String url2 = "http://localhost:3000";
         HttpURLConnection connect = (HttpURLConnection) new URL(url).openConnection();
         connect.setRequestMethod("GET");
 
@@ -48,11 +49,12 @@ public class rsuApp extends javax.swing.JFrame {
         
         fetchAPI api = new fetchAPI();
         api.call(response.toString(),lbContry1,lbContry2,lbContry3,lbContry4,lbContry5,lbContry6,lbContry7,lbContry8,lbContry9,lbPrice1,lbPrice2,lbPrice3,lbPrice4,lbPrice5,lbPrice6,lbPrice7,lbPrice8,lbPrice9); //put response inform String
-
         }
         catch (Exception e) {
-            System.out.println(e);
+            System.out.println("fetch API exception :" + e);
         }// catchErr
+        
+
     }
 
 
@@ -143,7 +145,6 @@ public class rsuApp extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         User_txtUserInput = new javax.swing.JTextField();
         User_cb2nd = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
         User_cb1st = new javax.swing.JComboBox<>();
         User_lbOutput = new javax.swing.JLabel();
         User_lbRate = new javax.swing.JLabel();
@@ -1018,10 +1019,10 @@ public class rsuApp extends javax.swing.JFrame {
 
         User_txtUserInput.setColumns(10);
         User_txtUserInput.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        User_txtUserInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         User_txtUserInput.setText("UserInput");
         User_txtUserInput.setToolTipText("UserInput");
         User_txtUserInput.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        User_txtUserInput.setMargin(new java.awt.Insets(2, 0, 2, 6));
         User_txtUserInput.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 User_txtUserInputFocusGained(evt);
@@ -1030,40 +1031,41 @@ public class rsuApp extends javax.swing.JFrame {
                 User_txtUserInputFocusLost(evt);
             }
         });
-        jPanel2.add(User_txtUserInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 150, 60));
+        jPanel2.add(User_txtUserInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 480, 60));
 
-        User_cb2nd.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        User_cb2nd.setFont(new java.awt.Font("Beirut", 0, 18)); // NOI18N
         User_cb2nd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AUD", "CAD", "JPY", "INR", "KRW", "SGN", "THB", "BRL", "EUR" }));
-        jPanel2.add(User_cb2nd, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 130, -1));
+        jPanel2.add(User_cb2nd, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 300, 40));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_javaproj/icon/arrow_impli24px.png"))); // NOI18N
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 30, 30));
-
-        User_cb1st.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        User_cb1st.setFont(new java.awt.Font("Beirut", 0, 18)); // NOI18N
         User_cb1st.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AUD", "CAD", "JPY", "INR", "KRW", "SGN", "THB", "BRL", "EUR" }));
-        jPanel2.add(User_cb1st, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 130, -1));
+        jPanel2.add(User_cb1st, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 300, 40));
 
         User_lbOutput.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
-        User_lbOutput.setText("224.32 EUR");
+        User_lbOutput.setText("Result here");
         User_lbOutput.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 User_lbOutputPropertyChange(evt);
             }
         });
-        jPanel2.add(User_lbOutput, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, -1, -1));
+        jPanel2.add(User_lbOutput, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, -1, -1));
 
         User_lbRate.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         User_lbRate.setForeground(new java.awt.Color(153, 153, 153));
         User_lbRate.setText("1  USD = 0.90 EUR");
-        jPanel2.add(User_lbRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 470, -1, -1));
+        jPanel2.add(User_lbRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, -1, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_javaproj/icon/tap_64px.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_javaproj/icon/exchange_64px.png"))); // NOI18N
+        jLabel6.setToolTipText("Hit me to convert");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel6MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel6MouseEntered(evt);
+            }
         });
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, -1, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1430,6 +1432,7 @@ public class rsuApp extends javax.swing.JFrame {
             
             pstmt.executeUpdate();
             
+            System.out.println(id);
             System.out.println(lbAccount.getText());
             System.out.println(User_txtUserInput.getText() + " " + User_cb1st.getSelectedItem().toString());
             System.out.println(User_cb2nd.getSelectedItem().toString());
@@ -1439,6 +1442,8 @@ public class rsuApp extends javax.swing.JFrame {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, e, "Insertdata Error",JOptionPane.ERROR);
         }
+        
+// =============================== SQL Insert data ===============================
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void User_txtUserInputFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_User_txtUserInputFocusLost
@@ -1447,6 +1452,10 @@ public class rsuApp extends javax.swing.JFrame {
             User_txtUserInput.setText("UserInput");
         }
     }//GEN-LAST:event_User_txtUserInputFocusLost
+
+    private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel6MouseEntered
 
     /**
      * @param args the command line arguments
@@ -1496,7 +1505,6 @@ public class rsuApp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
