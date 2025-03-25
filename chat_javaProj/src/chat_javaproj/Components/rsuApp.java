@@ -27,13 +27,12 @@ public class rsuApp extends javax.swing.JFrame {
         txtSearching.setVisible(false); 
         jTabbedPane1.setSelectedIndex(0);
         
-        
-        //handler
+// ==================================  API GET ====================================
         try {
         //  apiShoot
 //      String url = "https://api.exchangerate.host/convert?from=" + contry1 + "&to=" + contry2 + "&amount=" + amount + "&access_key=beb5978d539bc75cba9b77e170dcc526";    
         String url = "https://api.exchangerate.host/live?access_key=beb5978d539bc75cba9b77e170dcc526";
-        String url2 = "http://localhost:3000";
+//        String url2 = "http://localhost:3000";
         HttpURLConnection connect = (HttpURLConnection) new URL(url).openConnection();
         connect.setRequestMethod("GET");
 
@@ -54,7 +53,7 @@ public class rsuApp extends javax.swing.JFrame {
             System.out.println("fetch API exception :" + e);
         }// catchErr
         
-
+// ==================================  API GET ====================================
     }
 
 
@@ -147,10 +146,9 @@ public class rsuApp extends javax.swing.JFrame {
         User_cb2nd = new javax.swing.JComboBox<>();
         User_cb1st = new javax.swing.JComboBox<>();
         User_lbOutput = new javax.swing.JLabel();
-        User_lbRate = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         pnFormChart = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         pnFormSetting = new javax.swing.JPanel();
@@ -276,9 +274,9 @@ public class rsuApp extends javax.swing.JFrame {
 
         lbUsers.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         lbUsers.setForeground(new java.awt.Color(255, 255, 255));
-        lbUsers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_javaproj/icon/add_user_group_woman_man_24px.png"))); // NOI18N
-        lbUsers.setText(" Users");
-        pnUsers.add(lbUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 130, 50));
+        lbUsers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_javaproj/icon/sort_window_24px.png"))); // NOI18N
+        lbUsers.setText(" Convertor");
+        pnUsers.add(lbUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 150, 50));
 
         pnOverview.setBackground(new java.awt.Color(0, 0, 0));
         pnOverview.setForeground(new java.awt.Color(204, 204, 204));
@@ -1020,7 +1018,7 @@ public class rsuApp extends javax.swing.JFrame {
         User_txtUserInput.setColumns(10);
         User_txtUserInput.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         User_txtUserInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        User_txtUserInput.setText("UserInput");
+        User_txtUserInput.setText("Your price here!!");
         User_txtUserInput.setToolTipText("UserInput");
         User_txtUserInput.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         User_txtUserInput.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1048,12 +1046,7 @@ public class rsuApp extends javax.swing.JFrame {
                 User_lbOutputPropertyChange(evt);
             }
         });
-        jPanel2.add(User_lbOutput, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, -1, -1));
-
-        User_lbRate.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        User_lbRate.setForeground(new java.awt.Color(153, 153, 153));
-        User_lbRate.setText("1  USD = 0.90 EUR");
-        jPanel2.add(User_lbRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, -1, -1));
+        jPanel2.add(User_lbOutput, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_javaproj/icon/exchange_64px.png"))); // NOI18N
         jLabel6.setToolTipText("Hit me to convert");
@@ -1070,10 +1063,11 @@ public class rsuApp extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(204, 204, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel16.setFont(new java.awt.Font("Helvetica Neue", 1, 48)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel16.setText("GraphUI");
-        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, -1, -1));
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Silom", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel2.setText("Table DATA");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, -1, -1));
 
         javax.swing.GroupLayout pnFormUsersLayout = new javax.swing.GroupLayout(pnFormUsers);
         pnFormUsers.setLayout(pnFormUsersLayout);
@@ -1091,7 +1085,7 @@ public class rsuApp extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pnFormUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 729, Short.MAX_VALUE)))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("tab2", pnFormUsers);
@@ -1496,7 +1490,6 @@ public class rsuApp extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> User_cb1st;
     private javax.swing.JComboBox<String> User_cb2nd;
     private javax.swing.JLabel User_lbOutput;
-    private javax.swing.JLabel User_lbRate;
     private javax.swing.JTextField User_txtUserInput;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1504,7 +1497,7 @@ public class rsuApp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
