@@ -2,16 +2,18 @@
 package chat_javaproj.Components;
 
 import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.Date;
 import javax.swing.JOptionPane;
-import java.sql.ResultSet;
+import java.sql.*;
+import javax.swing.Timer;
+import javax.swing.table.DefaultTableModel;
 
 
 
@@ -32,8 +34,10 @@ public class rsuApp extends javax.swing.JFrame {
         //  apiShoot
 //      String url = "https://api.exchangerate.host/convert?from=" + contry1 + "&to=" + contry2 + "&amount=" + amount + "&access_key=beb5978d539bc75cba9b77e170dcc526";    
         String url = "https://api.exchangerate.host/live?access_key=beb5978d539bc75cba9b77e170dcc526";
-//        String url2 = "http://localhost:3000";
-        HttpURLConnection connect = (HttpURLConnection) new URL(url).openConnection();
+        String url2 = "http://localhost:3000"; // must create server API mock
+
+        HttpURLConnection connect = (HttpURLConnection) new URL(url2).openConnection();
+        
         connect.setRequestMethod("GET");
 
         BufferedReader bfReader = new BufferedReader(new InputStreamReader(connect.getInputStream()));
@@ -48,12 +52,14 @@ public class rsuApp extends javax.swing.JFrame {
         
         fetchAPI api = new fetchAPI();
         api.call(response.toString(),lbContry1,lbContry2,lbContry3,lbContry4,lbContry5,lbContry6,lbContry7,lbContry8,lbContry9,lbPrice1,lbPrice2,lbPrice3,lbPrice4,lbPrice5,lbPrice6,lbPrice7,lbPrice8,lbPrice9); //put response inform String
+        
         }
         catch (Exception e) {
-            System.out.println("fetch API exception :" + e);
+            System.out.println("GET API exception :" + e);
         }// catchErr
         
 // ==================================  API GET ====================================
+
     }
 
 
@@ -140,7 +146,7 @@ public class rsuApp extends javax.swing.JFrame {
         lbContry9 = new javax.swing.JLabel();
         lbContryName9 = new javax.swing.JLabel();
         lbPrice9 = new javax.swing.JLabel();
-        pnFormUsers = new javax.swing.JPanel();
+        pnFormConvertor = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         User_txtUserInput = new javax.swing.JTextField();
         User_cb2nd = new javax.swing.JComboBox<>();
@@ -149,8 +155,9 @@ public class rsuApp extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        pnFormChart = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
+        pnFormDataList = new javax.swing.JPanel();
+        JscrollPane = new javax.swing.JScrollPane();
+        tableDataList = new javax.swing.JTable();
         pnFormSetting = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -233,6 +240,11 @@ public class rsuApp extends javax.swing.JFrame {
                 lbAccountMouseEntered(evt);
             }
         });
+        lbAccount.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                lbAccountPropertyChange(evt);
+            }
+        });
         jPanel16.add(lbAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 0, -1, 70));
 
         txtSearching.setBackground(new java.awt.Color(204, 204, 204));
@@ -250,6 +262,7 @@ public class rsuApp extends javax.swing.JFrame {
         getContentPane().add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, -1));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnUsers.setBackground(new java.awt.Color(0, 0, 0));
         pnUsers.setForeground(new java.awt.Color(127, 127, 127));
@@ -278,6 +291,8 @@ public class rsuApp extends javax.swing.JFrame {
         lbUsers.setText(" Convertor");
         pnUsers.add(lbUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 150, 50));
 
+        jPanel1.add(pnUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 250, 70));
+
         pnOverview.setBackground(new java.awt.Color(0, 0, 0));
         pnOverview.setForeground(new java.awt.Color(204, 204, 204));
         pnOverview.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -304,6 +319,8 @@ public class rsuApp extends javax.swing.JFrame {
         lbOverview.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_javaproj/icon/home_24px.png"))); // NOI18N
         lbOverview.setText(" Overview");
         pnOverview.add(lbOverview, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 50));
+
+        jPanel1.add(pnOverview, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 70));
 
         pnChart.setBackground(new java.awt.Color(0, 0, 0));
         pnChart.setForeground(new java.awt.Color(127, 127, 127));
@@ -332,6 +349,8 @@ public class rsuApp extends javax.swing.JFrame {
         lbChart.setText(" Chart");
         pnChart.add(lbChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 130, 50));
 
+        jPanel1.add(pnChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 250, 70));
+
         pnSetting.setBackground(new java.awt.Color(0, 0, 0));
         pnSetting.setForeground(new java.awt.Color(127, 127, 127));
         pnSetting.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -358,6 +377,8 @@ public class rsuApp extends javax.swing.JFrame {
         lbSetting.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_javaproj/icon/edit_property_24px.png"))); // NOI18N
         lbSetting.setText(" Setting");
         pnSetting.add(lbSetting, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 130, 50));
+
+        jPanel1.add(pnSetting, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 250, 70));
 
         pnLogout.setBackground(new java.awt.Color(0, 0, 0));
         pnLogout.setForeground(new java.awt.Color(127, 127, 127));
@@ -386,32 +407,9 @@ public class rsuApp extends javax.swing.JFrame {
         lbLogout.setText("Logout");
         pnLogout.add(lbLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 130, 50));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnUsers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnOverview, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-            .addComponent(pnChart, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnLogout, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnSetting, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnOverview, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(pnUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(pnChart, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(pnSetting, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 384, Short.MAX_VALUE)
-                .addComponent(pnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        jPanel1.add(pnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 660, 250, 70));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 250, 740));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 250, 740));
 
         pnAUD.setBackground(new java.awt.Color(61, 61, 61));
         pnAUD.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1007,7 +1005,7 @@ public class rsuApp extends javax.swing.JFrame {
                     .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("tab1", pnFormOverview);
@@ -1032,11 +1030,11 @@ public class rsuApp extends javax.swing.JFrame {
         jPanel2.add(User_txtUserInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 480, 60));
 
         User_cb2nd.setFont(new java.awt.Font("Beirut", 0, 18)); // NOI18N
-        User_cb2nd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AUD", "CAD", "JPY", "INR", "KRW", "SGN", "THB", "BRL", "EUR" }));
+        User_cb2nd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AUD", "CAD", "JPY", "INR", "KRW", "SGD", "THB", "BRL", "EUR" }));
         jPanel2.add(User_cb2nd, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 300, 40));
 
         User_cb1st.setFont(new java.awt.Font("Beirut", 0, 18)); // NOI18N
-        User_cb1st.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AUD", "CAD", "JPY", "INR", "KRW", "SGN", "THB", "BRL", "EUR" }));
+        User_cb1st.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AUD", "CAD", "JPY", "INR", "KRW", "SGD", "THB", "BRL", "EUR" }));
         jPanel2.add(User_cb1st, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 300, 40));
 
         User_lbOutput.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
@@ -1050,12 +1048,16 @@ public class rsuApp extends javax.swing.JFrame {
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_javaproj/icon/exchange_64px.png"))); // NOI18N
         jLabel6.setToolTipText("Hit me to convert");
+        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel6MouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel6MouseExited(evt);
             }
         });
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, -1, -1));
@@ -1069,49 +1071,58 @@ public class rsuApp extends javax.swing.JFrame {
         jLabel2.setText("Table DATA");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, -1, -1));
 
-        javax.swing.GroupLayout pnFormUsersLayout = new javax.swing.GroupLayout(pnFormUsers);
-        pnFormUsers.setLayout(pnFormUsersLayout);
-        pnFormUsersLayout.setHorizontalGroup(
-            pnFormUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnFormUsersLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnFormConvertorLayout = new javax.swing.GroupLayout(pnFormConvertor);
+        pnFormConvertor.setLayout(pnFormConvertorLayout);
+        pnFormConvertorLayout.setHorizontalGroup(
+            pnFormConvertorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnFormConvertorLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        pnFormUsersLayout.setVerticalGroup(
-            pnFormUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnFormUsersLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnFormUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        pnFormConvertorLayout.setVerticalGroup(
+            pnFormConvertorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab2", pnFormUsers);
+        jTabbedPane1.addTab("tab2", pnFormConvertor);
 
-        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel7.setText("FORM 3");
+        pnFormDataList.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout pnFormChartLayout = new javax.swing.GroupLayout(pnFormChart);
-        pnFormChart.setLayout(pnFormChartLayout);
-        pnFormChartLayout.setHorizontalGroup(
-            pnFormChartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnFormChartLayout.createSequentialGroup()
-                .addGap(558, 558, 558)
-                .addComponent(jLabel7)
-                .addContainerGap(543, Short.MAX_VALUE))
-        );
-        pnFormChartLayout.setVerticalGroup(
-            pnFormChartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnFormChartLayout.createSequentialGroup()
-                .addGap(282, 282, 282)
-                .addComponent(jLabel7)
-                .addContainerGap(424, Short.MAX_VALUE))
-        );
+        tableDataList.setAutoCreateRowSorter(true);
+        tableDataList.setFont(new java.awt.Font("Niramit", 0, 14)); // NOI18N
+        tableDataList.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        jTabbedPane1.addTab("tab3", pnFormChart);
+            },
+            new String [] {
+                "ID", "Username", "From", "To", "Date"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableDataList.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tableDataList.setShowVerticalLines(true);
+        JscrollPane.setViewportView(tableDataList);
+
+        pnFormDataList.add(JscrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1190, 730));
+
+        jTabbedPane1.addTab("tab3", pnFormDataList);
 
         jLabel8.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
@@ -1138,7 +1149,7 @@ public class rsuApp extends javax.swing.JFrame {
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, 1190, 770));
 
-        setSize(new java.awt.Dimension(1440, 800));
+        setSize(new java.awt.Dimension(1440, 803));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1275,6 +1286,38 @@ public class rsuApp extends javax.swing.JFrame {
         // TODO add your handling code here:
         jTabbedPane1.setSelectedIndex(2);
         titleState.setText(lbChart.getText());
+        
+        // ================================== Table list data ====================================
+
+        try (Connection conn = databaseConnection.connect()) {
+            
+            String query = "SELECT * FROM class_insertData";
+            
+            try (PreparedStatement pstmt = conn.prepareStatement(query)) {
+                DefaultTableModel model = (DefaultTableModel) tableDataList.getModel();
+                ResultSet rs = pstmt.executeQuery();
+                
+                model.setRowCount(0); // reset for clear old data.
+                
+                while(rs.next()) {
+                    model.addRow(new Object[] {
+                        rs.getInt("ID"),
+                        rs.getString("username"),
+                        rs.getString("currencyFrom"),
+                        rs.getString("currencyTo"),
+                        rs.getString("date")
+                    });
+                    
+                }
+                rs.close();
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, e, "Table list data Fail",JOptionPane.ERROR_MESSAGE);
+        }
+
+// ================================== Table list data ====================================
     }//GEN-LAST:event_pnChartMouseClicked
 
     private void pnSettingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnSettingMouseClicked
@@ -1385,6 +1428,27 @@ public class rsuApp extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
+        
+        jLabel6.setCursor(new Cursor(Cursor.WAIT_CURSOR));
+        
+
+        Timer timer = new Timer(200, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+
+                jLabel6.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+
+            }
+        });
+        
+        timer.setRepeats(false);
+        
+        timer.start();
+        
+
+    
+    
+    
         try {
         String contry1 = User_cb1st.getSelectedItem().toString();
         String contry2 = User_cb2nd.getSelectedItem().toString();
@@ -1449,7 +1513,17 @@ public class rsuApp extends javax.swing.JFrame {
 
     private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
         // TODO add your handling code here:
+        jLabel6.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_jLabel6MouseEntered
+
+    private void lbAccountPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_lbAccountPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lbAccountPropertyChange
+
+    private void jLabel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseExited
+        // TODO add your handling code here:
+        jLabel6.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_jLabel6MouseExited
 
     /**
      * @param args the command line arguments
@@ -1487,6 +1561,7 @@ public class rsuApp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane JscrollPane;
     private javax.swing.JComboBox<String> User_cb1st;
     private javax.swing.JComboBox<String> User_cb2nd;
     private javax.swing.JLabel User_lbOutput;
@@ -1514,7 +1589,6 @@ public class rsuApp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -1568,14 +1642,15 @@ public class rsuApp extends javax.swing.JFrame {
     private javax.swing.JLabel lbUsers;
     private javax.swing.JPanel pnAUD;
     private javax.swing.JPanel pnChart;
-    private javax.swing.JPanel pnFormChart;
+    private javax.swing.JPanel pnFormConvertor;
+    private javax.swing.JPanel pnFormDataList;
     private javax.swing.JPanel pnFormOverview;
     private javax.swing.JPanel pnFormSetting;
-    private javax.swing.JPanel pnFormUsers;
     private javax.swing.JPanel pnLogout;
     private javax.swing.JPanel pnOverview;
     private javax.swing.JPanel pnSetting;
     private javax.swing.JPanel pnUsers;
+    private javax.swing.JTable tableDataList;
     private javax.swing.JLabel titleState;
     private javax.swing.JTextField txtSearching;
     // End of variables declaration//GEN-END:variables

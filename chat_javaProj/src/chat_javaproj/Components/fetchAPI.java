@@ -102,7 +102,7 @@ public class fetchAPI {
         double answer2 = quotes.getDouble("USD" + contry2);
         double UserInput = Double.parseDouble(User_txtUserInput.getText());
         
-        double temp = (UserInput*1)/answer1;
+        double temp = UserInput / answer1;
         double result = temp * answer2;
         
         User_lbOutput.setText(f.format(result) + " " + contry2);
