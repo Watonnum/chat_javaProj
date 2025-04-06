@@ -16,11 +16,13 @@ import java.sql.SQLException;
 
 public class logIn extends javax.swing.JFrame {
     
+
     public logIn() {
         initComponents();
-//        jPanel1.setBackground(Color.decode("#202020"));
+        
     }
-
+    
+    
 
     
     @SuppressWarnings("unchecked")
@@ -164,8 +166,6 @@ public class logIn extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     // ***--------Bordor Color---------****
-    Border borderW= BorderFactory.createLineBorder(Color.WHITE, 5);
-    Border borderR= BorderFactory.createLineBorder(Color.RED, 2);
     Border borderTouch= BorderFactory.createLineBorder(Color.BLACK, 2);
     
     // ***--------Variable-------------***
@@ -174,37 +174,29 @@ public class logIn extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         Username = txtUsername.getText();
         Password = txtPassword.getText();
-        
-// =============================   old logic =============================
-//
-//        if ((Input.length() + InputPW.length()) == 20) {
-//            this.setVisible(false);
-//            System.out.println("Here");
-//            loadingComponent loadingCom = new loadingComponent();
-//            loadingCom.setVisible(true);
-//            
-//        } else {
-//           JOptionPane.showConfirmDialog(null, "not found 404", "Warning", JOptionPane.CLOSED_OPTION, JOptionPane.WARNING_MESSAGE);
-//           
-//           if(Input.length() == 7) {
-//               txtPassword.requestFocus();
-//           } else {
-//               txtUsername.requestFocus();
-//           }
-//        }
-//
-// =============================   old logic =============================
+
 
 // =============================   valid Login system new logic =============================
-         try (Connection conn = databaseConnection.connect()) {  // call Class "databaseConnection"
-        String sql = "SELECT * FROM class_Account WHERE Username = ? AND Password = ?"; // view class_Account at Username&Password's column
+         try (Connection conn = databaseConnection.connect()) {
+        String sql = "SELECT * FROM class_Account WHERE Username = ? AND Password = ?";// valid Account
+        String sqlUpdate = "UPDATE class_Account SET Token = ? WHERE Username = ?";// token Query
         PreparedStatement pstmt = conn.prepareStatement(sql);
+        PreparedStatement pstmt2 = conn.prepareStatement(sqlUpdate);
         pstmt.setString(1, Username);
         pstmt.setString(2, Password);
 
         ResultSet rs = pstmt.executeQuery();
 
         if (rs.next()) {
+            // =========== generate token ===========
+            String token = TokenGen.generateToken();
+            System.out.println(token);
+            
+            pstmt2.setString(1, token);
+            pstmt2.setString(2, Username);
+            int rowsUpdated = pstmt2.executeUpdate();
+            // =========== generate token ===========
+            
             JOptionPane.showMessageDialog(null, "Login Successful");
             this.setVisible(false);
             new loadingComponent().setVisible(true);
@@ -216,6 +208,8 @@ public class logIn extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Database Error", "Error", JOptionPane.ERROR_MESSAGE);
     }
 // =============================   valid Login system new logic =============================
+
+    
 
     }//GEN-LAST:event_btnLoginActionPerformed
 
@@ -339,29 +333,5 @@ public class logIn extends javax.swing.JFrame {
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 
-        //**--custom function--**
-    
-//    private void validationInput(String Input) {
-//        String input = Input;
-//        
-//        int lengthInput = input.length();
-//        
-//        if (lengthInput == 7) {         //6708767
-//            txtUsername.setBorder(borderW);
-//        } 
-//        else
-//        txtUsername.setBorder(borderR);
-//    }
-//
-//    private void validationInputPW(String InputPW) {
-//        String input = InputPW;
-//        
-//        int lengthInput = input.length();
-//        
-//        if (lengthInput == 13) {         // 1200901241039
-//            txtPassword.setBorder(borderW);
-//        } 
-//        else
-//        txtPassword.setBorder(borderR);
-//    }
+
 }

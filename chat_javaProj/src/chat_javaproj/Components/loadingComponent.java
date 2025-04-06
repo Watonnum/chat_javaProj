@@ -125,7 +125,7 @@ public class loadingComponent extends javax.swing.JFrame {
         
         @Override
         protected Void doInBackground() throws Exception {
-            for (int i = 0; i <= 100; i++) {
+            for (int i = 0; i <= 200; i++) {
                 Thread.sleep(5); // จำลองงานที่ใช้เวลา
                 progresstionBar.setValue(i); // อัปเดต ProgressBar
             }
