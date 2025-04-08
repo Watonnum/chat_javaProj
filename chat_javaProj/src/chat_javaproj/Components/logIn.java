@@ -179,7 +179,7 @@ public class logIn extends javax.swing.JFrame {
 // =============================   valid Login system new logic =============================
          try (Connection conn = databaseConnection.connect()) {
         String sql = "SELECT * FROM class_Account WHERE Username = ? AND Password = ?";// valid Account
-        String sqlUpdate = "UPDATE class_Account SET Token = ? WHERE Username = ?";// token Query
+        String sqlUpdate = "UPDATE class_Account SET Token = ?, Status = 'ON' WHERE Username = ?";// token Query
         PreparedStatement pstmt = conn.prepareStatement(sql);
         PreparedStatement pstmt2 = conn.prepareStatement(sqlUpdate);
         pstmt.setString(1, Username);

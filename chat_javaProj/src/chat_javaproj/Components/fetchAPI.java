@@ -29,43 +29,43 @@ public class fetchAPI {
         }
 
         JSONObject quotes = json.getJSONObject("quotes");
-        
+        DecimalFormat df = new DecimalFormat("#,###.##");
 
         double USDAUD = quotes.getDouble("USDAUD");
-        lbContry1.setText(USDAUD+"");
+        lbContry1.setText(df.format(USDAUD));
         lbPrice1.setText("1 USD = " + USDAUD + " AUD");
         
         double USDCAD = quotes.getDouble("USDCAD");
-        lbContry2.setText(USDCAD+"");
-        lbPrice2.setText("1 USD = " + USDCAD + " CAD");
+        lbContry2.setText(df.format(USDCAD));
+        lbPrice2.setText("1 USD = " + df.format(USDCAD) + " CAD");
         
         double USDJPY = quotes.getDouble("USDJPY");
-        lbContry3.setText(USDJPY+"");
-        lbPrice3.setText("1 USD = " + USDJPY + " JPY");
+        lbContry3.setText(df.format(USDJPY));
+        lbPrice3.setText("1 USD = " + df.format(USDJPY) + " JPY");
         
         double USDINR = quotes.getDouble("USDINR");
-        lbContry4.setText(USDINR+"");
-        lbPrice4.setText("1 USD = " + USDINR + " INR");
+        lbContry4.setText(df.format(USDINR));
+        lbPrice4.setText("1 USD = " + df.format(USDINR) + " INR");
         
         double USDKRW = quotes.getDouble("USDKRW");
-        lbContry5.setText(USDKRW+"");
-        lbPrice5.setText("1 USD = " + USDKRW + " KRW");
+        lbContry5.setText(df.format(USDKRW));
+        lbPrice5.setText("1 USD = " + df.format(USDKRW) + " KRW");
         
         double USDSGD = quotes.getDouble("USDSGD");
-        lbContry6.setText(USDSGD+"");
-        lbPrice6.setText("1 USD = " + USDSGD + " SGD");
+        lbContry6.setText(df.format(USDSGD));
+        lbPrice6.setText("1 USD = " + df.format(USDSGD) + " SGD");
         
         double USDTHB = quotes.getDouble("USDTHB");
-        lbContry7.setText(USDTHB+"");
-        lbPrice7.setText("1 USD = " + USDTHB + " THB");
+        lbContry7.setText(df.format(USDTHB));
+        lbPrice7.setText("1 USD = " + df.format(USDTHB) + " THB");
         
         double USDBRL = quotes.getDouble("USDBRL");
-        lbContry8.setText(USDBRL+"");
-        lbPrice8.setText("1 USD = " + USDBRL + " BRL");
+        lbContry8.setText(df.format(USDBRL));
+        lbPrice8.setText("1 USD = " + df.format(USDBRL) + " BRL");
         
         double USDEUR = quotes.getDouble("USDEUR");
-        lbContry9.setText(USDEUR+"");
-        lbPrice9.setText("1 USD = " + USDEUR + " EUR");
+        lbContry9.setText(df.format(USDEUR));
+        lbPrice9.setText("1 USD = " + df.format(USDEUR) + " EUR");
         
     }
 
