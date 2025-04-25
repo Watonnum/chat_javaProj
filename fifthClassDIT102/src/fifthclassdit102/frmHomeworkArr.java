@@ -246,7 +246,7 @@ public class frmHomeworkArr extends javax.swing.JFrame {
     for (int i = 0; i < denominations.length; i++) {
         int count = moneyInSatang / denominations[i];
         textFields[i].setText(count + "");
-        moneyInSatang %= denominations[i];
+        moneyInSatang %= denominations[i]; // check
         System.out.println(moneyInSatang %= denominations[i]);
     }
 

@@ -91,9 +91,9 @@ public class frmCalCircle extends javax.swing.JFrame {
         return 2 * (Math.PI) * r;
     }
     private void btnClickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClickActionPerformed
-        String ans = "";
+        String ans;
         r = Double.parseDouble(txtField.getText());      
-        ans += "Area = " + area() + "\n";
+        ans = "Area = " + area() + "\n";
         ans += "Circumference = " + Circonference() + "\n";
         
         txtArea.setText(ans);

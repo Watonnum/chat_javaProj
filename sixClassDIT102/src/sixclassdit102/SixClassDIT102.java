@@ -14,9 +14,9 @@ public class SixClassDIT102 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        frmTestCHello OP1 = new frmTestCHello();
+        frmTestCHello OP1 = new frmTestCHello(); //hl
         frmCalCircle OP2 = new frmCalCircle();
-        frmCaseCcircle OP3 = new frmCaseCcircle();
+        frmCaseCcircle OP3 = new frmCaseCcircle(); //hl
         frmLeapYear OP4 = new frmLeapYear();
         frmTestSum OP5 = new frmTestSum();
         frmDatePicker OP6 = new frmDatePicker();

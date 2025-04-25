@@ -1,0 +1,6 @@
+Pen 10 1
+Pen 10 1
+Pen 10 1
+Pen 10 1
+Pencil 20 1
+Ruler 30 1

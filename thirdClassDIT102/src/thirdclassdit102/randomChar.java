@@ -93,7 +93,7 @@ public class randomChar extends javax.swing.JFrame {
 
     private void btnRandomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRandomActionPerformed
         randomString.setLength(0);
-        for (int i=0; i < 10; i++) {
+        for (int i=0; i < randomString.length(); i++) {
             char random =(char) (rnd.nextInt(26) + 'a');
             randomString.append(random);
         }

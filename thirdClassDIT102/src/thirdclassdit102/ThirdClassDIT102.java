@@ -26,10 +26,10 @@ public class ThirdClassDIT102 {
         OP2.setVisible(false);
         
         OP3.setLocation(820,300);
-        OP3.setVisible(false);
+        OP3.setVisible(true);
         
         OP4.setLocation(820,300);
-        OP4.setVisible(true);
+        OP4.setVisible(false);
     }
     
 }

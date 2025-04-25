@@ -191,6 +191,7 @@ public class frmLastWork extends javax.swing.JFrame {
         String output1 = txtOutput.getText();
         String ans = "";
         
+        
         if (checkRev.isSelected() && checkDouble.isSelected()) {
         // Double first
         String temp = "";
@@ -205,6 +206,7 @@ public class frmLastWork extends javax.swing.JFrame {
         }
 
         txtOutput2.setText(ans);
+        
         }
         
         //Another case
@@ -218,7 +220,7 @@ public class frmLastWork extends javax.swing.JFrame {
         }
         
         //Another case
-        else if (checkDouble.isSelected() && !checkRev.isSelected()) {
+        else if (!checkRev.isSelected() && checkDouble.isSelected()) {
             //Double
              for (int i = 0; i< output1.length();i++) {
             ans += output1.charAt(i) + "" + output1.charAt(i);

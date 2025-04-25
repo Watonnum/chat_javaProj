@@ -107,12 +107,12 @@ public class frmDatePicker extends javax.swing.JFrame {
     }//GEN-LAST:event_DatePickerActionPerformed
 
     private void btnShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowActionPerformed
-        txtRes.setText(DatePicker.getDate() + ""); // setText by get string of DatePicker component.
+        txtRes.setText(DatePicker.getDate()+ ""); // setText by get string of DatePicker component.
     }//GEN-LAST:event_btnShowActionPerformed
 
     private void btnSetDateNowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSetDateNowActionPerformed
         Date now = new Date(); // Date now
-        long millisecondsInYear = 31_557_600_000L;
+        //long millisecondsInYear = 31_557_600_000L;
         System.out.println((now.getTime()) + " years");
         DatePicker.setDate(now); // set DatePicker component to Date now
         txtRes.setText(DatePicker.getDate() + ""); // then get string of DatePicker to set in txtRes components.
